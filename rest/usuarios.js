@@ -13,4 +13,20 @@ router.get('/findAll/json', function(req, res, next) {
     .catch(error => res.status(400).send(error)) 
 });
 
+router.post('/save', function(req, res, next) {
+    let { nombre, correo, celular, comentario } = req.body;
+    Usuario.create({
+      nombre: nombre,
+      correo: correo,
+      celular: celular,
+      comentario: comentario,  
+      createdAt: new Date(),
+      updatedAt: new Date()
+    })
+    .then(usuario => {
+      res.json(usuario);
+    })
+    .catch(error => res.status(400).send(error));
+  });
+
 module.exports = router;

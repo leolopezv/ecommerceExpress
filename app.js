@@ -7,7 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var usuariosRouter = require('./routes/usuarios');
-var restRouter = require('./rest/usuarios');
+var tarjetasRouter = require('./routes/tarjetas');
+var restUsuarios = require('./rest/usuarios');
+var restTarjetasRouter = require('./rest/tarjetas');
 
 var app = express();
 var cors = require('cors'); // cors permite que se puedan hacer peticiones desde cualquier origen a nuestra API
@@ -26,7 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/usuarios', usuariosRouter);
-app.use('/rest/usuarios', restRouter);
+app.use('/tarjetas', tarjetasRouter);
+app.use('/rest/usuarios', restUsuarios);
+app.use('/rest/tarjetas', restTarjetasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

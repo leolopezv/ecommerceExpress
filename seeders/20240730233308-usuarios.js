@@ -14,6 +14,14 @@ module.exports = {
     */
     await queryInterface.bulkInsert('usuarios', [
       {
+        nombre: 'Kanye West',
+        correo: 'k.west@gmail.com',
+        celular: '3123456789',
+        comentario: 'Muy buena calidad en las gorras, las recomiendo.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
         nombre: 'Juan Garcia',
         correo: 'j.garcia@gmail.com',
         celular: '3121234567',

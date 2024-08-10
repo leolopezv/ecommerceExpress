@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class tarjeta extends Model {
     static associate(models) {
       // define association here
+      tarjeta.belongsTo(models.usuario, { foreignKey: 'usuario_id', as: 'usuario' });
     }
   }
   tarjeta.init({
@@ -14,7 +15,13 @@ module.exports = (sequelize, DataTypes) => {
     titular: DataTypes.STRING,
     fecha: DataTypes.DATE,
     codigo: DataTypes.STRING,
-    usuario_id: DataTypes.INTEGER
+    usuario_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'usuarios',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'tarjeta',

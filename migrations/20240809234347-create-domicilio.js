@@ -2,26 +2,26 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('tarjetas', {
+    await queryInterface.createTable('domicilios', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      banco: {
+      pais: {
         type: Sequelize.STRING
       },
-      numero: {
+      provincia: {
         type: Sequelize.STRING
       },
-      titular: {
+      ciudad: {
         type: Sequelize.STRING
       },
-      fecha: {
-        type: Sequelize.DATE
+      direccion: {
+        type: Sequelize.STRING
       },
-      codigo: {
+      postal: {
         type: Sequelize.STRING
       },
       usuario_id: {
@@ -44,6 +44,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('tarjetas');
+    await queryInterface.dropTable('domicilios');
   }
 };

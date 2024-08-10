@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const { Sequelize, Op} = require('sequelize');
-const Tarjeta = require('../models').tarjeta;
+const Domicilio = require('../models').domicilio;
 const Usuario = require('../models').usuario;
 
 router.get('/findAll/json', function(req, res, next) {  
-    Tarjeta.findAll({  
+    Domicilio.findAll({  
         attributes: { exclude: ["createdAt","updatedAt"] },
         include: [{
             model: Usuario,
@@ -13,8 +13,8 @@ router.get('/findAll/json', function(req, res, next) {
             attributes: { exclude: ["createdAt","updatedAt"] }
         }]
     })  
-    .then(tarjetas => {  
-        res.json(tarjetas);  
+    .then(domicilios => {  
+        res.json(domicilios);  
     })  
     .catch(error => res.status(400).send(error)) 
 });

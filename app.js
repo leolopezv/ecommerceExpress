@@ -8,8 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var usuariosRouter = require('./routes/usuarios');
 var tarjetasRouter = require('./routes/tarjetas');
+var domiciliosRouter = require('./routes/domicilios');
 var restUsuarios = require('./rest/usuarios');
 var restTarjetasRouter = require('./rest/tarjetas');
+var restDomiciliosRouter = require('./rest/domicilios');
 
 var app = express();
 var cors = require('cors'); // cors permite que se puedan hacer peticiones desde cualquier origen a nuestra API
@@ -29,8 +31,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/tarjetas', tarjetasRouter);
+app.use('/domicilios', domiciliosRouter);
 app.use('/rest/usuarios', restUsuarios);
 app.use('/rest/tarjetas', restTarjetasRouter);
+app.use('/rest/domicilios', restDomiciliosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

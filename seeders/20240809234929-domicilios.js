@@ -11,7 +11,7 @@ module.exports = {
           pais: 'Colombia',
           provincia: 'Antioquia',
           ciudad: 'Medellin',
-          direccion: 'Calle 123 # 45-67',
+          direccion: 'Calle Principal Simon Bolivar #45-67',
           postal: '050022'
         },
         {

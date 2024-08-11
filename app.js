@@ -13,6 +13,11 @@ var restUsuarios = require('./rest/usuarios');
 var restTarjetasRouter = require('./rest/tarjetas');
 var restDomiciliosRouter = require('./rest/domicilios');
 
+var fotosRouter = require('./routes/fotos');
+var restRouter = require('./rest/fotos');
+
+
+
 var app = express();
 var cors = require('cors'); // cors permite que se puedan hacer peticiones desde cualquier origen a nuestra API
 app.use(cors());
@@ -35,6 +40,9 @@ app.use('/domicilios', domiciliosRouter);
 app.use('/rest/usuarios', restUsuarios);
 app.use('/rest/tarjetas', restTarjetasRouter);
 app.use('/rest/domicilios', restDomiciliosRouter);
+
+app.use('/fotos', fotosRouter);
+app.use('/rest/fotos', restRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

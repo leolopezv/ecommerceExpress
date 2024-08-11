@@ -6,8 +6,7 @@ const Usuario = require('../models').usuario;
 router.get('/findAll/json', function(req, res, next) {  
     Usuario.findAll({  
         attributes: { exclude: ["createdAt","updatedAt"] },
-    }) 
-     
+    })  
     .then(usuarios => {  
         res.json(usuarios);  
     })  

@@ -4,14 +4,14 @@ const { Sequelize, Op } = require('sequelize');
 const Tarjeta = require('../models').tarjeta;
 
 router.post('/save', function(req, res, next) {
-    let { banco, numero, titular, fecha, codigo, usuario_id } = req.body;
+    let { banco, numero, titular, fecha} = req.body;
     Tarjeta.create({
       banco: banco,
       numero: numero,
       titular: titular,
       fecha: fecha,
-      codigo: codigo,
-      usuario_id: usuario_id,
+      codigo: '777',
+      usuario_id: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     })

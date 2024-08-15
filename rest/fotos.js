@@ -7,7 +7,6 @@ router.get('/findAll/json', function(req, res, next) {
     Foto.findAll({  
         attributes: { exclude: ["createdAt","updatedAt"] },
     }) 
-     
     .then(fotos => {  
         res.json(fotos);  
     })  
@@ -58,8 +57,4 @@ router.get('/findAllByDescripcion/json', function(req, res, next) {
     .catch(error => res.status(400).send(error));
 });
 
-
 module.exports = router;
-
-
-

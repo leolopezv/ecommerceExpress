@@ -9,12 +9,16 @@ var usersRouter = require('./routes/users');
 var usuariosRouter = require('./routes/usuarios');
 var tarjetasRouter = require('./routes/tarjetas');
 var domiciliosRouter = require('./routes/domicilios');
+var fotosRouter = require('./routes/fotos');
+var carritosRouter = require('./routes/carritos');
 var restUsuarios = require('./rest/usuarios');
 var restTarjetasRouter = require('./rest/tarjetas');
 var restDomiciliosRouter = require('./rest/domicilios');
+var restCarritosRouter = require('./rest/carritos');
 
 var fotosRouter = require('./routes/fotos');
 var restRouter = require('./rest/fotos');
+
 
 
 
@@ -40,6 +44,8 @@ app.use('/domicilios', domiciliosRouter);
 app.use('/rest/usuarios', restUsuarios);
 app.use('/rest/tarjetas', restTarjetasRouter);
 app.use('/rest/domicilios', restDomiciliosRouter);
+app.use('/rest/carritos', restCarritosRouter);
+app.use('/carritos', carritosRouter);
 
 app.use('/fotos', fotosRouter);
 app.use('/rest/fotos', restRouter);
